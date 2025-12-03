@@ -828,7 +828,10 @@ export const api = {
           transactionRef: s.transaction_ref,
           phone: s.phone,
           place: s.place,
-          createdAt: s.created_at
+          createdAt: s.created_at,
+          sheetUrl: '',
+          licenseKey: s.license_key || 'FREE',
+          themeColor: 'indigo'
       }));
   },
 

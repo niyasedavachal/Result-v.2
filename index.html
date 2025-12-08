@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>SchoolResult Pro</title>
+    <title>ResultMate - Smart Campus OS</title>
+    <meta name="description" content="The easiest way for schools, madrassas, and tuitions in Kerala to publish results online. AI-powered, mobile-first, and secure.">
     
     <!-- PWA Setup -->
-    <link rel="manifest" id="app-manifest" href="./assets/manifest-DdLeIEtG.json">
+    <link rel="manifest" id="app-manifest" href="manifest.json">
     <meta name="theme-color" content="#2563eb">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,9 +28,28 @@
       ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
       ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
+      
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        .print\:block, .print\:block * {
+          visibility: visible;
+        }
+        .print\:hidden {
+          display: none !important;
+        }
+        .print\:block {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          color: black;
+        }
+      }
     </style>
-
-<link rel="stylesheet" href="/index.css">
   <script type="importmap">
 {
   "imports": {
@@ -45,9 +65,9 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-BhZde92M.js"></script>
 </head>
   <body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-200">
     <div id="root"></div>
-</body>
+    <script type="module" src="./index.tsx"></script>
+  </body>
 </html>
